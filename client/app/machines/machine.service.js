@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('fullstackApp')
-.factory('UnitsResource', function ($resource) {
-    return $resource('/api/units/:id/', {
+.factory('machinesResource', function ($resource) {
+    return $resource('/api/machines/:id/', {
         id: '@id'
     },{
         update: {
