@@ -15,4 +15,19 @@ angular.module('fullstackApp')
             $scope.machine = response;
         });
     };
+
+    $scope.update = function() {
+      machinesResource.update({id: $scope.machine._id, name: $scope.machine.name, info: $scope.machine.info,
+           description: $scope.machine.description, machineOwner: $scope.machine.machineOwner,
+           machineNumber: $scope.machine.machineNumber,
+           clientName: $scope.machine.clientName, active: $scope.machine.active, }, function() {
+      });
+      };
+
+
+      $scope.delete = function() {
+              machinesResource.remove({id: $scope.machine._id}, function()
+              {
+              });
+            };
   });

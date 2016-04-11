@@ -12,15 +12,15 @@
     <input type="text" class="form-control" placeholder="Description"  ng-model="unit.description">
   </div>
   <div class="form-group">
-    <label for="description">Unit Owner</label>
+    <label for="unitOwner">Unit Owner</label>
     <input type="text" class="form-control" placeholder="Unit Owner"  ng-model="unit.unitOwner">
   </div>
   <div class="form-group">
-    <label for="description">Unit Number</label>
+    <label for="unitNumber">Unit Number</label>
     <input type="text" class="form-control" placeholder="Unit Number"  ng-model="unit.unitNumber">
   </div>
   <div class="form-group">
-    <label for="description">Client Name</label>
+    <label for="clientName">Client Name</label>
     <input type="text" class="form-control" placeholder="Client Name"  ng-model="unit.clientName">
   </div>
   <div class="checkbox">
@@ -29,4 +29,6 @@
     </label>
   </div>
   <button type="submit" class="btn btn-default" ng-click="save()">Submit</button>
+  <button type="update" class="btn btn-success" ng-click="update()">Update</button>
+  <button type="delete" class="btn btn-danger" ng-click="delete()">Delete</button>
 </form>

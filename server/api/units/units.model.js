@@ -6,7 +6,13 @@ var mongoose = require('mongoose'),
 var UnitsSchema = new Schema({
   name: String,
   info: String,
+  description: String,
+  unitOwner: String,
+  unitNumber: String,
+  clientName: String,
   active: Boolean
+
+
 });
 
 module.exports = mongoose.model('Units', UnitsSchema);

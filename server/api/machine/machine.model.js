@@ -6,6 +6,10 @@ var mongoose = require('mongoose'),
 var machineSchema = new Schema({
   name: String,
   info: String,
+  description: String,
+  machineOwner: String,
+  machineNumber: String,
+  clientName: String,
   active: Boolean
 });
 
