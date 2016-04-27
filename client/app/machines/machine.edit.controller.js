@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fullstackApp')
-  .controller('machineEditCtrl', function ($scope , machinesResource, $stateParams) {
+  .controller('machineEditCtrl', function ($scope , $state, machinesResource, $stateParams) {
     $scope.message = 'Hello';
 
     if($stateParams.id){
@@ -11,23 +11,16 @@ angular.module('fullstackApp')
     }
 
     $scope.save = function(){
-        machinesResource.save($scope.machine).$promise.then(function(response){
+      if($stateParams.id) {
+        machinesResource.update({ id: $stateParams.id} , $scope.machine).$promise.then(function(response){
             $scope.machine = response;
         });
-    };
+      }else {
+             machinesResource.save( $scope.machine).$promise.then(function(response){
+                $state.go('machines.edit' , { id: response._id} );
+                 $scope.machine = response;
+             });
+  }
 
-    $scope.update = function() {
-      machinesResource.update({id: $scope.machine._id, name: $scope.machine.name, info: $scope.machine.info,
-           description: $scope.machine.description, machineOwner: $scope.machine.machineOwner,
-           machineNumber: $scope.machine.machineNumber,
-           clientName: $scope.machine.clientName, active: $scope.machine.active, }, function() {
-      });
-      };
-
-
-      $scope.delete = function() {
-              machinesResource.remove({id: $scope.machine._id}, function()
-              {
-              });
-            };
-  });
+  };
+   });

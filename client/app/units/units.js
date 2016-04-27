@@ -18,7 +18,7 @@ angular.module('fullstackApp')
         controller: 'UnitsEditCtrl',
         templateUrl: 'app/units/unitsEdit.html'
     }).state('units.edit', {
-        url: '/:id',
+        url: '/:id/edit',
         controller: 'UnitsEditCtrl',
         templateUrl: 'app/units/unitsEdit.html'
     });

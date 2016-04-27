@@ -4,18 +4,20 @@
     </div>
     <div class="col-lg-12">
         <div class="pull-left">
-            <h1 class="page-header"><strong>Machines</strong></h1>
+            <h1 class="page-header" style="color: #fff; font-size:20pt;"><strong>Machines</strong></h1>
         </div>
         <div class="pull-right">
-            <button type="button" name="new-case" ng-click="new();">New machine</button>
+            <button type="button" style="font-size:12pt" name="new-case" ng-click="new();">New machine</button>
         </div>
     </div>
 </div>
 
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-12" style="font-size:14pt">
     <ul class="nav nav-tabs nav-stacked col-md-8 col-md-offset-2" ng-repeat="machine in machines">
-      <li><a href="#" tooltip="{{machine.info}}" ng-click="edit(machine._id)">{{machine.name}}</a></li>
+      <li class="col-md-10" style="float: left;"><a href="#" tooltip="{{machine.info}}" ng-click="edit(machine._id)">{{machine.name}}</a></li>
+      <button type="button" style="float: left;" class="btn btn-danger col-md-1" ng-click="delete(machine._id)">Delete</button>
+
     </ul>
   </div>
 </div>

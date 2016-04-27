@@ -21,7 +21,8 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="fullstackApp" style="background-color: #ffdab3" >
+  <body ng-app="fullstackApp" style="background-image:url(assets/images/halftone.jpg); background-repeat:no-repeat;
+                                     background-size:100%; background-attachment:fixed; font-size:18pt" >
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -29,11 +30,24 @@
     <!-- Add your site or application content here -->
     <div ng-include="'components/navbar/navbar.html'"></div>
     <div class="container">
-        <div ui-view=""></div>
+        <div ui-view="" style="font-size:18pt;"></div>
+        <h1 class="page-header" style="color:lightgray; margin-top:100px;">Location:</h1>
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        <div style='overflow:hidden;height:440px;width:1150px;'>
+          <div id='gmap_canvas' style='height:440px;width:1150px; margin-top:40px'>
+          </div>
+          <div><small><a href="http://embedgooglemaps.com">embed google maps</a></small>
+          </div>
+          <div><small><a href="http://freedirectorysubmissionsites.com/">free web directories</a></small>
+          </div>
+          <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+        </div>
+        <script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(44.5333756,18.654444199999944),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(44.5333756,18.654444199999944)});infowindow = new google.maps.InfoWindow({content:'<strong>Location</strong><br>Mije Keroševića Guje 3 Tuzla 75000 Bosnia & Herzegovina<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+        </script>
     </div>
 
     <footer class="footer">
-      <div class="container">
+      <div class="container" style="font-size:10pt">
           <p>Angular Fullstack v2.1.1 |
             <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
              <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
@@ -79,10 +93,6 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
-          <script src="app/cases/cases.controller.js"></script>
-          <script src="app/cases/cases.edit.controller.js"></script>
-          <script src="app/cases/cases.js"></script>
-          <script src="app/cases/cases.service.js"></script>
           <script src="app/machines/machine.controller.js"></script>
           <script src="app/machines/machine.edit.controller.js"></script>
           <script src="app/machines/machine.js"></script>

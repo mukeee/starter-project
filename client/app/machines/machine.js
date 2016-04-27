@@ -18,7 +18,7 @@ angular.module('fullstackApp')
         controller: 'machineEditCtrl',
         templateUrl: 'app/machines/machineedit.html'
     }).state('machines.edit', {
-      url: '/:id',
+      url: '/:id/edit',
       controller: 'machineEditCtrl',
       templateUrl: 'app/machines/machineedit.html'
   });
